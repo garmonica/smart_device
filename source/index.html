@@ -6,11 +6,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart Device - печатные платы</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="preload" href="fonts/ptmono-regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/robotocondensed-regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/robotocondensed-bold.woff2" as="font" crossorigin="anonymous">
 </head>
 
 <body>
 
-  <h1>Производственная компания Smart Device</h1>
+  <header class="page-header">
+    <nav class="main-nav">
+      <a class="main-nav__logo">
+        <img class="logo" src="img/logo-light.svg" alt="Логотип компании «Smart Device»" width="202" height="52">
+      </a>
+      <div class="main-nav__info info">
+        <a href="" class="info__email">info@sd.ru</a>
+        <a href="" class="info__phone">+7 (495) 000 52 52</a>
+        <a href="">Заказать звонок</a>
+      </div>
+    </nav>
+    <section class="main-screen">
+      <h1>Печатные платы</h1>
+      <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
+      <img src="https://www.placecage.com/c/705/515" alt="Набор из пяти печатных плат">
+      <a href="">Получить бесплатную консультацию</a>
+    </section>
+    <a href="">Скролл вниз</a>
+  </header>
+  <main>
+    <div class="sections-wrapper">
+      <section class="benefits">
+        <h2 class="visually-hidden"></h2>
+        <ul>
+          <li>
+            <h3>Оперативные сроки</h3>
+            <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять
+              заказы плат и комплектующих в самые короткие сроки</p>
+          </li>
+          <li>
+            <h3>Крупные поставщики</h3>
+            <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND.
+              Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.</p>
+          </li>
+          <li>
+            <h3>Полная конфиденциальность</h3>
+            <p>По желанию клиента мы обеспечиваем полную конфеденциальность.</p>
+          </li>
+          <li>
+            <h3>Персонализация стоимости</h3>
+            <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас
+              устраивает.</p>
+          </li>
+        </ul>
+      </section>
+      <section class="about-company">
+        <h3>О компании</h3>
+        <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997
+          года. Выполняем срочные заказы и пилотные образцы до 10 дней.</p>
+        <p>Наши поставщики - мировые производители
+          электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices
+          применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома,
+          СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</p>
+        <a href="">Подробнее</a>
+      </section>
+    </div>
+    <section class="services">
+      <h2>Service Device предлагает следующие товары и услуги</h2>
+      <ul>
+        <li>
+          <a href="#">
+            <h3>Производство печатных плат</h3>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h3>Монтаж печатных плат</h3>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h3>Комплектующие для светотехники</h3>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <section class="page-footer__feedback feedback">
+      <h2>Остались вопросы? Задайте их нам!</h2>
+      <p>Мы проконсультируем Вас бесплатно</p>
+      <form action="" method="POST">
+        <label for="user-name">Имя</label>
+        <input id="user-name" type="text" placeholder="Имя">
+        <label for="user-phone">Телефон</label>
+        <input id="user-phone" type="tel" placeholder="Телефон">
+        <label for="user-question">Ваш вопрос</label>
+        <textarea id="user-question" placeholder="Ваш вопрос"></textarea>
+        <button type="submit">Задать вопрос</button>
+        <input id="user-allow" type="checkbox">
+        <label for="user-allow">Я согласен на обработку персональных данных</label>
+      </form>
+    </section>
+    <div class="page-footer__wrapper">
+      <a class="page-footer__logo">
+        <img src="img/logo-dark.svg" alt="Логотип компании «Smart Device»" width="216" height="52">
+      </a>
+      <ul class="page-footer__social social">
+        <li><a href="#">social icon</a></li>
+        <li><a href="#">social icon</a></li>
+        <li><a href="#">social icon</a></li>
+      </ul>
+      <section class="page-footer__nav">
+        <h2>Разделы сайта</h2>
+        <a href="">О компании</a>
+        <a href="">Продукты</a>
+        <a href="">Производство печатных плат</a>
+        <a href="">Монтаж печатных плат</a>
+        <a href="">Комплектующие</a>
+        <a href="">Доставка</a>
+        <a href="">Контакты</a>
+      </section>
+      <section class="page-footer__contacts">
+        <p>г. Мытищи, Олимпийский проспект, д.10</p>
+        <a href="">+7 (495) 589-40-50</a>
+        <a href="">+7 (926) 926-080-79</a>
+        <a href="">+7 (925) 003-87-67</a>
+      </section>
+    </div>
+    <section class="page-footer__copyrights copyrights">
+      <p>Все права защищены</p>
+      <p>1999-2018 SD Service Devices</p>
+      <p>Условия конфиденциальности</p>
+      <p>Developed by wow studio </p>
+    </section>
+  </footer>
+
 
 </body>
 
