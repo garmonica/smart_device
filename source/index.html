@@ -15,27 +15,51 @@
 <body>
 
   <header class="page-header">
-    <nav class="main-nav">
-      <a class="main-nav__logo">
-        <img class="logo" src="img/logo-light.svg" alt="Логотип компании «Smart Device»" width="202" height="52">
-      </a>
-      <div class="main-nav__info info">
-        <a href="" class="info__email">info@sd.ru</a>
-        <a href="" class="info__phone">+7 (495) 000 52 52</a>
-        <a href="">Заказать звонок</a>
+    <div class="container">
+      <div class="header-top">
+        <a class="header-top__logo">
+          <picture>
+            <source media="(max-width: 767px)" srcset="img/logo-mobile.svg">
+            <img src="img/logo-light.svg" alt="Логотип компании «Smart Device»" width="202" height="52">
+          </picture>
+        </a>
+
+        <a class="header-top__contact header-top__contact--email" href="mailto:info@sd.ru">
+          <svg width="19" height="14">
+            <use xlink:href="img/sprite.svg#icon-envelope"></use>
+          </svg>
+          <span>info@sd.ru</span>
+        </a>
+        <a class="header-top__contact header-top__contact--phone" href="tel:+74950005252">
+          <svg width="18" height="18">
+            <use xlink:href="img/sprite.svg#icon-phone"></use>
+          </svg>
+          <span>+7 (495) 000 52 52</span>
+        </a>
+
+        <a class="header-top__button button" href="#">Заказать звонок</a>
       </div>
-    </nav>
-    <section class="main-screen">
-      <h1>Печатные платы</h1>
-      <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
-      <img src="https://www.placecage.com/c/705/515" alt="Набор из пяти печатных плат">
-      <a href="">Получить бесплатную консультацию</a>
-    </section>
-    <a href="">Скролл вниз</a>
+
+      <section class="main-screen">
+        <div class="main-screen__wrapper">
+          <h1>Печатные платы</h1>
+          <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
+          <a class="main-screen__button button" href="#feedback">
+            <span class="main-screen__button-text main-screen__button-text--desktop">Получить бесплатную
+              консультацию</span>
+            <span class="main-screen__button-text main-screen__button-text--mobile">Бесплатная консультация</span>
+          </a>
+        </div>
+        <img src="img/product-desktop.png" width="705" height="515" alt="Набор из пяти печатных плат">
+        <a class="main-screen__scroll-down" href="#benefits">Скролл вниз</a>
+      </section>
+
+    </div>
   </header>
+
   <main>
     <div class="sections-wrapper">
-      <section class="benefits">
+      <section class="benefits" id="benefits">
         <h2 class="visually-hidden"></h2>
         <ul>
           <li>
@@ -93,7 +117,7 @@
   </main>
 
   <footer class="page-footer">
-    <section class="page-footer__feedback feedback">
+    <section class="page-footer__feedback feedback" id="feedback">
       <h2>Остались вопросы? Задайте их нам!</h2>
       <p>Мы проконсультируем Вас бесплатно</p>
       <form action="" method="POST">
@@ -141,7 +165,6 @@
       <p>Developed by wow studio </p>
     </section>
   </footer>
-
 
 </body>
 

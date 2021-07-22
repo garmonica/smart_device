@@ -1,6 +1,10 @@
-@mixin heading-style {
+@mixin offset {
   margin: 0;
   padding: 0;
+}
+
+@mixin heading-style {
+  @include offset();
   font-size: 30px;
   line-height: 30px;
   font-weight: 600;

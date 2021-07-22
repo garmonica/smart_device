@@ -1,0 +1,15 @@
+.page-header {
+  padding: 33px 0 0;
+  overflow: hidden;
+  background: $basic-dark url("../img/main-bg-desktop.jpg") no-repeat center / cover;
+
+  @media (max-width: $tablet-width) {
+    padding: 20px 0 0;
+    background-image: url("../img/main-bg-tablet.jpg");
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 10px 0 72px;
+    background-image: url("../img/main-bg-mobile.jpg");
+  }
+}
