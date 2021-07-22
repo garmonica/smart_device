@@ -19,7 +19,7 @@
   z-index: $zindex-main-screen;
 
   @media (max-width: $mobile-width) {
-    max-width: 430px;
+    // max-width: 450px;
     margin: 0 auto;
   }
 }
@@ -106,7 +106,7 @@
   }
 
   &:active {
-    background: rgba($basic-white, 0.7);
+    background: rgba($basic-white, 0.8);
   }
 
   @media (max-width: $tablet-width) {

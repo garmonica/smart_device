@@ -1,0 +1,15 @@
+.blocks-wrapper {
+  padding: 0 0 110px;
+  background: $basic-white url("../img/triangles-benefits-desktop.svg") no-repeat center -30px;
+
+  @media (max-width: $tablet-width) {
+    padding: 0 0 80px;
+    background-image: url("../img/triangles-benefits-tablet.svg");
+    background-position: 100% 38%;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 0 0 65px;
+    background-position: center 71%;
+  }
+}

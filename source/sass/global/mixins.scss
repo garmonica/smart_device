@@ -3,15 +3,27 @@
   padding: 0;
 }
 
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 @mixin heading-style {
   @include offset();
-  font-size: 30px;
-  line-height: 30px;
-  font-weight: 600;
-  text-align: center;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
 
   @media (max-width: $tablet-width) {
-    font-size: 24px;
-    line-height: 41px;
+    font-size: 32px;
+    line-height: 45px;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 28px;
+    line-height: 39px;
   }
 }
