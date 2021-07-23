@@ -11,3 +11,15 @@
 .container--blocks-wrapper {
   max-width: 1218px;
 }
+
+.container--feedback {
+  max-width: 1218px;
+
+  @media (max-width: $tablet-width) {
+    padding: 0 86px 0 92px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 0 15px;
+  }
+}
