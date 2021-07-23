@@ -64,7 +64,7 @@
 
   <main>
     <div class="blocks-wrapper">
-      <div class="container container__blocks-wrapper">
+      <div class="container container--blocks-wrapper">
         <section class="benefits" id="benefits">
           <h2 class="visually-hidden">Преимущества компании</h2>
           <ul>
@@ -118,33 +118,40 @@
         </section>
       </div>
     </div>
+
     <section class="services">
-      <h2>Service Device предлагает следующие товары и услуги</h2>
-      <ul>
-        <li>
-          <a href="#">
-            <h3>Производство печатных плат</h3>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <h3>Монтаж печатных плат</h3>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <h3>Комплектующие для светотехники</h3>
-          </a>
-        </li>
-      </ul>
+      <div class="container container--blocks-wrapper">
+        <h2 class="services__heading">Service Device предлагает следующие товары и&nbsp;услуги</h2>
+        <ul>
+          <li class="services__item">
+            <a class="services__link" href="#">
+              <h3>Производство печатных плат</h3>
+              <img src="img/production.jpg" width="370" height="620" alt="Процесс производства печатных плат">
+            </a>
+          </li>
+          <li class="services__item">
+            <a class="services__link" href="#">
+              <h3>Монтаж печатных плат</h3>
+              <img src="img/installation.jpg" width="370" height="620" alt="Монтаж печатных плат в действии">
+            </a>
+          </li>
+          <li class="services__item">
+            <a class="services__link" href="#">
+              <h3>Комплектующие для светотехники</h3>
+              <img src="img/components.jpg" width="370" height="620" alt="Светодиодная лента">
+            </a>
+          </li>
+        </ul>
+      </div>
     </section>
+
   </main>
 
   <footer class="page-footer">
     <section class="page-footer__feedback feedback" id="feedback">
       <h2>Остались вопросы? Задайте их нам!</h2>
       <p>Мы проконсультируем Вас бесплатно</p>
-      <form action="" method="POST">
+      <form action="https://echo.htmlacademy.ru" method="POST">
         <label for="user-name">Имя</label>
         <input id="user-name" type="text" placeholder="Имя">
         <label for="user-phone">Телефон</label>
@@ -176,18 +183,19 @@
         <a href="">Контакты</a>
       </section>
       <section class="page-footer__contacts">
+        <h2>Наш офис</h2>
         <p>г. Мытищи, Олимпийский проспект, д.10</p>
-        <a href="">+7 (495) 589-40-50</a>
-        <a href="">+7 (926) 926-080-79</a>
-        <a href="">+7 (925) 003-87-67</a>
+        <a href="tel:+74955894050">+7 (495) 589-40-50</a>
+        <a href="tel:+79250038767">+7 (925) 003-87-67</a>
+        <a href="tel:+792692608079">+7 (926) 926-080-79</a>
       </section>
     </div>
-    <section class="page-footer__copyrights copyrights">
+    <div class="page-footer__copyrights copyrights">
       <p>Все права защищены</p>
       <p>1999-2018 SD Service Devices</p>
       <p>Условия конфиденциальности</p>
       <p>Developed by wow studio </p>
-    </section>
+    </div>
   </footer>
   <script type="module" src="js/main.js"></script>
 </body>
