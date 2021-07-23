@@ -3,7 +3,7 @@
   background: url("../img/img2005.png") no-repeat 0 bottom / auto 97%;
 
   @media (max-width: $tablet-width) {
-    padding: 0 10px 6px 188px;
+    padding: 0 0 6px 188px;
     background: url("../img/img2005.png") no-repeat 0 bottom / auto 98%;
   }
 
@@ -45,11 +45,15 @@
 
 .about__button {
   margin-top: 21px;
-  padding: 13px 49px;
+  padding: 13px 50px;
   border-color: $accent;
   color: $accent;
   display: inline-block;
   vertical-align: middle;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 24px;
+  }
 
   @media (max-width: $mobile-width) {
     margin-top: 30px;
@@ -74,7 +78,6 @@
 
 .about__dots {
   display: none;
-  font-size: 11px;
 
   @media (max-width: $tablet-width) {
     display: inline;
