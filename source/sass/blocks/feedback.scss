@@ -18,6 +18,10 @@
   @media (max-width: $tablet-width) {
     background: none;
   }
+
+  @media (max-width: $mobile-width) {
+    max-width: 591px;
+  }
 }
 
 .feedback__content {

@@ -23,3 +23,9 @@
     padding: 0 15px;
   }
 }
+
+.container--footer {
+  @media (max-width: $tablet-width) {
+    padding: 0;
+  }
+}

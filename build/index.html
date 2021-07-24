@@ -176,39 +176,92 @@
     </section>
 
     <div class="page-footer__wrapper">
-      <a class="page-footer__logo">
-        <img src="img/logo-dark.svg" alt="Логотип компании «Smart Device»" width="216" height="52">
-      </a>
-      <ul class="page-footer__social social">
-        <li><a href="#">social icon</a></li>
-        <li><a href="#">social icon</a></li>
-        <li><a href="#">social icon</a></li>
-      </ul>
-      <section class="page-footer__nav">
-        <h2>Разделы сайта</h2>
-        <a href="">О компании</a>
-        <a href="">Продукты</a>
-        <a href="">Производство печатных плат</a>
-        <a href="">Монтаж печатных плат</a>
-        <a href="">Комплектующие</a>
-        <a href="">Доставка</a>
-        <a href="">Контакты</a>
-      </section>
-      <section class="page-footer__contacts">
-        <h2>Наш офис</h2>
-        <p>г. Мытищи, Олимпийский проспект, д.10</p>
-        <a href="tel:+74955894050">+7 (495) 589-40-50</a>
-        <a href="tel:+79250038767">+7 (925) 003-87-67</a>
-        <a href="tel:+792692608079">+7 (926) 926-080-79</a>
-      </section>
+
+      <div class="page-footer__top container container--footer">
+
+        <div class="page-footer__logo-block">
+          <a class="page-footer__logo">
+            <img src="img/logo-dark.svg" alt="Логотип компании «Smart Device»" width="216" height="52">
+          </a>
+          <ul class="page-footer__social social">
+            <li>
+              <a href="#">
+                <svg width="27" height="27">
+                  <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg width="27" height="27">
+                  <use xlink:href="img/sprite.svg#icon-ok"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg width="27" height="27">
+                  <use xlink:href="img/sprite.svg#icon-vk"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="page-footer__accordion">
+          <div class="page-footer__accordion-item site-sections">
+            <h2>Разделы сайта</h2>
+            <ul class="page-footer__accordion-content">
+              <li>
+                <a href="#">О компании</a>
+                <a href="#">Продукты</a>
+                <a href="#">Производство печатных плат</a>
+                <a href="#">Монтаж печатных плат</a>
+              </li>
+              <li>
+                <a href="#">Комплектующие</a>
+                <a href="#">Доставка</a>
+                <a href="#">Контакты</a>
+              </li>
+            </ul>
+          </div>
+          <div class="page-footer__accordion-item contacts">
+            <h2>Наш офис</h2>
+            <ul class="page-footer__accordion-content">
+              <li>
+                <p>г. Мытищи, Олимпийский проспект, д.10</p>
+              </li>
+              <li>
+                <a href="tel:+74955894050">+7 (495) 589-40-50</a>
+              </li>
+              <li>
+                <a href="tel:+79250038767">+7 (925) 003-87-67</a>
+              </li>
+              <li>
+                <a href="tel:+792692608079">+7 (926) 926-080-79</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer__bottom">
+        <div class="page-footer__bottom-wrapper container">
+          <div class="page-footer__rights">
+            <p class="page-footer__rights-reserved">Все права защищены</p>
+            <p>1999-2018 SD Service Devices</p>
+          </div>
+          <div class="page-footer__copyrights">
+            <a href="#">Условия конфиденциальности</a>
+            <p>Developed by wow studio </p>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="page-footer__copyrights copyrights">
-      <p>Все права защищены</p>
-      <p>1999-2018 SD Service Devices</p>
-      <p>Условия конфиденциальности</p>
-      <p>Developed by wow studio </p>
-    </div>
+
   </footer>
+
   <script type="module" src="js/main.js"></script>
 </body>
 

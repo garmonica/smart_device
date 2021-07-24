@@ -1,0 +1,29 @@
+.social {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: $tablet-width) {
+    justify-content: flex-end;
+    max-width: 150px;
+  }
+
+  @media (max-width: $mobile-width) {
+    max-width: 100%;
+    margin-left: -15px;
+    justify-content: center;
+  }
+}
+
+.social li {
+  margin-right: 16px;
+
+  @media (max-width: $tablet-width) {
+    margin-right: 0;
+    margin-left: 15px;
+  }
+}
+
+.social a {
+  display: block;
+}
