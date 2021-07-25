@@ -15,6 +15,10 @@
 .feedback__container {
   background: url("../img/paper-plane.png") no-repeat left 39% / 42%;
 
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/paper-plane@2x.png");
+  }
+
   @media (max-width: $tablet-width) {
     background: none;
   }

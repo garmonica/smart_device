@@ -3,13 +3,25 @@
   overflow: hidden;
   background: $basic-dark url("../img/main-bg-desktop.jpg") no-repeat center / cover;
 
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/main-bg-desktop@2x.jpg");
+  }
+
   @media (max-width: $tablet-width) {
     padding: 20px 0 0;
     background-image: url("../img/main-bg-tablet.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/main-bg-tablet@2x.jpg");
+    }
   }
 
   @media (max-width: $mobile-width) {
     padding: 10px 0 72px;
     background-image: url("../img/main-bg-mobile.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/main-bg-mobile@2x.jpg");
+    }
   }
 }

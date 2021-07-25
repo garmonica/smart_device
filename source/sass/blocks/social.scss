@@ -24,6 +24,19 @@
   }
 }
 
-.social a {
+.social__link {
   display: block;
+
+  svg {
+    fill: $icons-grey;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: $accent;
+  }
+
+  &:active svg {
+    opacity: 0.5;
+  }
 }

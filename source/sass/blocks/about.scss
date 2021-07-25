@@ -2,9 +2,13 @@
   padding: 0 10px 10px 180px;
   background: url("../img/img2005.png") no-repeat 0 bottom / auto 97%;
 
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/img2005@2x.png");
+  }
+
   @media (max-width: $tablet-width) {
     padding: 0 0 6px 188px;
-    background: url("../img/img2005.png") no-repeat 0 bottom / auto 98%;
+    background-size: auto 98%;
   }
 
   @media (max-width: $mobile-width) {

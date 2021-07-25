@@ -55,7 +55,13 @@
             <span class="main-screen__button-text main-screen__button-text--mobile">Бесплатная консультация</span>
           </a>
         </div>
-        <img src="img/product-desktop.png" width="705" height="515" alt="Набор из пяти печатных плат">
+        <picture>
+          <source type="image/webp" media="(max-width: 767px)" srcset="img/product-mobile.webp 1x, img/product-mobile@2x.webp 2x">
+          <source type="image/webp" media="(max-width: 1023px)" srcset="img/product-tablet.webp 1x, img/product-tablet@2x.webp 2x">
+          <source type="image/webp" media="(min-width: 1024px)" srcset="img/product-desktop.webp 1x, img/product-desktop@2x.webp 2x">
+          <!-- 1х: 705px; 2x: 1410px -->
+          <img src="img/product-desktop.png" srcset="img/product-desktop@2x.png 2x" width="705" height="515" alt="Набор из пяти печатных плат">
+        </picture>
         <a class="main-screen__scroll-down" href="#benefits">Скролл вниз</a>
       </section>
 
@@ -126,19 +132,37 @@
           <li class="services__item">
             <a class="services__link" href="#">
               <h3>Производство печатных плат</h3>
-              <img src="img/production.jpg" width="370" height="620" alt="Процесс производства печатных плат">
+              <picture>
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/production-mobile.webp 1x, img/production-mobile@2x.webp 2x">
+                <source type="image/webp" media="(max-width: 1023px)" srcset="img/production-tablet.webp 1x, img/production-tablet@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 1024px)" srcset="img/production-desktop.webp 1x, img/production-desktop@2x.webp 2x">
+                <!-- 1х: 370px; 2x: 740px -->
+                <img src="img/production-desktop.jpg" srcset="img/production-desktop@2x.jpg 2x" width="370" height="620" alt="Процесс производства печатных плат">
+              </picture>
             </a>
           </li>
           <li class="services__item">
             <a class="services__link" href="#">
               <h3>Монтаж печатных плат</h3>
-              <img src="img/installation.jpg" width="370" height="620" alt="Монтаж печатных плат в действии">
+              <picture>
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/installation-mobile.webp 1x, img/installation-mobile@2x.webp 2x">
+                <source type="image/webp" media="(max-width: 1023px)" srcset="img/installation-tablet.webp 1x, img/installation-tablet@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 1024px)" srcset="img/installation-desktop.webp 1x, img/installation-desktop@2x.webp 2x">
+                <!-- 1х: 370px; 2x: 740px -->
+                <img src="img/installation-desktop.jpg" srcset="img/installation-desktop@2x.jpg 2x" width="370" height="620" alt="Монтаж печатных плат в действии">
+              </picture>
             </a>
           </li>
           <li class="services__item">
             <a class="services__link" href="#">
               <h3>Комплектующие для светотехники</h3>
-              <img src="img/components.jpg" width="370" height="620" alt="Светодиодная лента">
+              <picture>
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/components-mobile.webp 1x, img/components-mobile@2x.webp 2x">
+                <source type="image/webp" media="(max-width: 1023px)" srcset="img/components-tablet.webp 1x, img/components-tablet@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 1024px)" srcset="img/components-desktop.webp 1x, img/components-desktop@2x.webp 2x">
+                <!-- 1х: 370px; 2x: 740px -->
+                <img src="img/components-desktop.jpg" srcset="img/components-desktop@2x.jpg 2x" width="370" height="620" alt="Светодиодная лента">
+              </picture>
             </a>
           </li>
         </ul>
@@ -185,21 +209,21 @@
           </a>
           <ul class="page-footer__social social">
             <li>
-              <a href="#">
+              <a class="social__link" href="#">
                 <svg width="27" height="27">
                   <use xlink:href="img/sprite.svg#icon-facebook"></use>
                 </svg>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a class="social__link" href="#">
                 <svg width="27" height="27">
                   <use xlink:href="img/sprite.svg#icon-ok"></use>
                 </svg>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a class="social__link" href="#">
                 <svg width="27" height="27">
                   <use xlink:href="img/sprite.svg#icon-vk"></use>
                 </svg>
@@ -208,10 +232,10 @@
           </ul>
         </div>
 
-        <div class="page-footer__accordion">
-          <div class="page-footer__accordion-item site-sections">
-            <h2>Разделы сайта</h2>
-            <ul class="page-footer__accordion-content">
+        <div class="page-footer__menu footer-menu footer-menu--nojs">
+          <nav class="footer-menu__block footer-menu__block--nav">
+            <h2 class="footer-menu__heading">Разделы сайта</h2>
+            <ul class="footer-menu__content">
               <li>
                 <a href="#">О компании</a>
                 <a href="#">Продукты</a>
@@ -224,12 +248,12 @@
                 <a href="#">Контакты</a>
               </li>
             </ul>
-          </div>
-          <div class="page-footer__accordion-item contacts">
-            <h2>Наш офис</h2>
-            <ul class="page-footer__accordion-content">
+          </nav>
+          <div class="footer-menu__block footer-menu__block--contacts">
+            <h2 class="footer-menu__heading">Наш офис</h2>
+            <ul class="footer-menu__content">
               <li>
-                <p>г. Мытищи, Олимпийский проспект, д.10</p>
+                <address>г. Мытищи, Олимпийский проспект, д.10</address>
               </li>
               <li>
                 <a href="tel:+74955894050">+7 (495) 589-40-50</a>
