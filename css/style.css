@@ -1802,7 +1802,9 @@ input:focus + .feedback__checkbox-label span {
     min-height: 104px; }
 
 .modal--show {
-  display: block; }
+  display: block;
+  -webkit-animation: fromtop 0.4s;
+          animation: fromtop 0.4s; }
 
 .modal__button {
   width: 100%;
@@ -1842,3 +1844,19 @@ input:focus + .feedback__checkbox-label span {
       background: #00b2ff; }
   .modal__close:active {
     opacity: 0.5; }
+
+@-webkit-keyframes fromtop {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0); }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1); } }
+
+@keyframes fromtop {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0); }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1); } }
