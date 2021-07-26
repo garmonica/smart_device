@@ -37,6 +37,7 @@
 
 .modal--show {
   display: block;
+  animation: fromtop 0.4s;
 }
 
 .modal__button {
@@ -89,5 +90,15 @@
 
   &:active {
     opacity: 0.5;
+  }
+}
+
+@keyframes fromtop {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
   }
 }
