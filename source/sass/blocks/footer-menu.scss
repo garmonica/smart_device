@@ -27,7 +27,7 @@
       content: "";
       position: absolute;
       top: 50%;
-      right: 0;
+      right: -8px;
       transform: translate(-50%, 0);
       width: 16px;
       height: 2px;
@@ -35,7 +35,7 @@
     }
 
     &::after {
-      right: 8px;
+      right: 0;
       transform: rotate(90deg);
     }
   }
