@@ -200,7 +200,8 @@
               <label class="visually-hidden" for="user-name">Имя</label>
               <input id="user-name" type="text" name="user-name" placeholder="Имя" required>
               <label class="visually-hidden" for="user-phone">Телефон</label>
-              <input id="user-phone" type="tel" name="user-phone" placeholder="Телефон" required>
+              <input id="user-phone" type="tel" name="user-phone" placeholder="Телефон" minlength="14" maxlength="14"
+                required>
             </div>
             <label class="visually-hidden" for="user-question">Ваш вопрос</label>
             <textarea id="user-question" name="user-question" placeholder="Ваш вопрос" required></textarea>
@@ -312,7 +313,7 @@
       <label class="visually-hidden" for="name">Имя</label>
       <input id="name" type="text" placeholder="Имя" required>
       <label class="visually-hidden" for="phone">Телефон</label>
-      <input id="phone" type="tel" placeholder="Телефон" required>
+      <input id="phone" type="tel" placeholder="Телефон" minlength="14" maxlength="14" required>
       <label class="visually-hidden" for="question">Ваш вопрос</label>
       <textarea id="question" placeholder="Ваш вопрос"></textarea>
       <button class="modal__button form__button button" type="submit">Отправить</button>

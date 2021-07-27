@@ -38,54 +38,56 @@ if (accordion) {
 const modal = document.querySelector('.modal');
 const modalOpen = document.querySelector('.header-top__button');
 
-if (modal) {
-  const modalForm = modal.querySelector('form');
-  const modalClose = modal.querySelector('.modal__close');
-  const modalName = modal.querySelector('input[type="text"]');
-  const modalPhone = modal.querySelector('input[type="tel"]');
-  const modalQuestion = modal.querySelector('textarea');
+const modalForm = modal.querySelector('form');
+const modalClose = modal.querySelector('.modal__close');
+const modalName = modal.querySelector('input[type="text"]');
+const modalPhone = modal.querySelector('input[type="tel"]');
+const modalQuestion = modal.querySelector('textarea');
 
-  const overlay = document.createElement('div');
-  overlay.classList.add('overlay');
+const overlay = document.createElement('div');
+overlay.classList.add('overlay');
 
-  const openModal = () => {
-    modal.classList.add('modal--show');
-    document.body.appendChild(overlay);
+const openModal = () => {
+  modal.classList.add('modal--show');
+  document.body.appendChild(overlay);
 
-    if (!modalName.value) {
-      modalName.focus();
-    } else if (!modalPhone.value) {
-      modalPhone.focus();
-    } else {
-      modalQuestion.focus();
+  if (!modalName.value) {
+    modalName.focus();
+  } else if (!modalPhone.value) {
+    modalPhone.focus();
+  } else {
+    modalQuestion.focus();
+  }
+};
+
+const closeModal = () => {
+  modal.classList.remove('modal--show');
+  document.body.removeChild(overlay);
+};
+
+modalOpen.addEventListener('click', () => openModal());
+
+modalClose.addEventListener('click', () => closeModal());
+
+overlay.addEventListener('click', () => closeModal());
+
+window.addEventListener('keydown', (evt) => {
+  if (evt.key === ('Escape' || 'Esc')) {
+    if (modal.classList.contains('modal--show')) {
+      evt.preventDefault();
+      closeModal(modal);
     }
-  };
+  }
+});
 
-  const closeModal = () => {
-    modal.classList.remove('modal--show');
-    document.body.removeChild(overlay);
-  };
+modalForm.addEventListener('submit', (evt) => {
+  evt.preventDefault();
 
-  modalOpen.addEventListener('click', () => openModal());
-
-  modalClose.addEventListener('click', () => closeModal());
-
-  overlay.addEventListener('click', () => closeModal());
-
-  window.addEventListener('keydown', (evt) => {
-    if (evt.key === ('Escape' || 'Esc')) {
-      if (modal.classList.contains('modal--show')) {
-        evt.preventDefault();
-        closeModal(modal);
-      }
-    }
-  });
-
-  modalForm.addEventListener('submit', (evt) => {
-    evt.preventDefault();
+  if (modalPhone.value.length === 14) {
     closeModal();
-  });
-}
+  }
+});
+
 
 // Local Storage
 
@@ -113,14 +115,124 @@ if (storageUserName || storageUserPhone || storageUserQuestion) {
   textareasQuestion.forEach((text) => text.value = storageUserQuestion);
 }
 
+// Phone Mask
+
+const getInputNumbersValue = (input) => input.value.replace(/\D/g, '');
+
+const onPhoneFocus = (evt) => {
+  if (!evt.target.value) {
+    evt.target.value = '+7(';
+  }
+
+  if (evt.target.value === '+7(' || evt.target.value.length !== 14) {
+    evt.target.setCustomValidity('Необходимо ввести 10 цифр номера');
+  } else {
+    evt.target.setCustomValidity('');
+  }
+};
+
+const onPhoneBlur = (evt) => {
+  if (evt.target.value === '+7(') {
+    evt.target.value = '';
+  }
+};
+
+const onPhoneClick = (evt) => {
+  if (evt.target.selectionStart < 3) {
+    evt.target.selectionStart = evt.target.value.length;
+  }
+};
+
+const onPhonePaste = (evt) => {
+  const input = evt.target;
+  const inputNumbersValue = getInputNumbersValue(input);
+  const pasted = evt.clipboardData || window.clipboardData;
+
+  if (pasted) {
+    const pastedText = pasted.getData('Text');
+    if (/\D/g.test(pastedText)) {
+      input.value = inputNumbersValue;
+    }
+  }
+};
+
+const onPhoneInput = (evt) => {
+  const input = evt.target;
+  const inputNumbersValue = getInputNumbersValue(input);
+  const selectionStart = input.selectionStart;
+  let formattedInputValue = '+7(';
+
+  if (!inputNumbersValue) {
+    return input.value = '';
+  }
+
+  if (input.value.length !== selectionStart) {
+    if (evt.data && /\D/g.test(evt.data)) {
+      input.value = inputNumbersValue;
+    }
+    return;
+  }
+
+  if (inputNumbersValue.length > 1) {
+    formattedInputValue += `${inputNumbersValue.substring(1, 4)}`;
+  }
+  if (inputNumbersValue.length >= 5) {
+    formattedInputValue += `)${inputNumbersValue.substring(4, 11)}`;
+  }
+
+  input.value = formattedInputValue;
+};
+
+const onPhoneKeyDown = function (evt) {
+  const input = evt.target;
+  if (evt.key === 'Backspace' && input.value.length < 3) {
+    evt.preventDefault();
+  }
+  if (evt.key === 'Backspace' && input.selectionStart < 3) {
+    input.selectionStart = input.value.length;
+  }
+};
+
+// const onPhoneChange = function (evt) {
+//   const input = evt.target;
+//   if (input.value === '+7(' || input.value.length !== 14) {
+//     input.setCustomValidity('Необходимо ввести 10 цифр номера');
+//   } else {
+//     input.setCustomValidity('');
+//   }
+// };
+
+for (const input of inputsPhone) {
+  input.addEventListener('keydown', onPhoneKeyDown);
+  input.addEventListener('input', onPhoneInput);
+  input.addEventListener('paste', onPhonePaste);
+  input.addEventListener('focus', onPhoneFocus);
+  input.addEventListener('blur', onPhoneBlur);
+  input.addEventListener('click', onPhoneClick);
+  // input.addEventListener('change', onPhoneChange);
+}
+
+// forms submit
+
+if (isStorageSupport) {
+  inputsName.forEach((name) => localStorage.setItem('user-name', name.value));
+  inputsPhone.forEach((phone) => localStorage.setItem('user-phone', phone.value));
+  textareasQuestion.forEach((question) => localStorage.setItem('user-question', question.value));
+}
+
 forms.forEach((form, i) => {
   form.addEventListener('submit', (evt) => {
     evt.preventDefault();
-
-    if (isStorageSupport) {
-      localStorage.setItem('user-name', inputsName[i].value);
-      localStorage.setItem('user-phone', inputsPhone[i].value);
-      localStorage.setItem('user-question', textareasQuestion[i].value);
+    if (inputsPhone[i].value === '+7(' || inputsPhone[i].value.length !== 14) {
+      inputsPhone[i].setCustomValidity('Необходимо ввести 10 цифр номера');
+    } else {
+      inputsPhone[i].setCustomValidity('');
+      if (isStorageSupport) {
+        localStorage.setItem('user-name', inputsName[i].value);
+        localStorage.setItem('user-phone', inputsPhone[i].value);
+        localStorage.setItem('user-question', textareasQuestion[i].value);
+      }
+      console.log('ok');
     }
   });
 });
