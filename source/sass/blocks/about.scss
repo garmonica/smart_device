@@ -1,18 +1,20 @@
 .about {
+  min-height: 317px;
   padding: 0 10px 10px 180px;
-  background: url("../img/img2005.png") no-repeat 0 bottom / auto 97%;
+  background: url("../img/img2005.png") no-repeat 0 13px / auto 304px;
 
   @media (min-resolution: 2dppx) {
     background-image: url("../img/img2005@2x.png");
   }
 
   @media (max-width: $tablet-width) {
+    min-height: 355px;
     padding: 0 0 6px 188px;
-    background-size: auto 98%;
+    background-position: 0 5px;
+    background-size: auto 350px;
   }
 
   @media (max-width: $mobile-width) {
-    // max-width: 450px;
     margin: 0 auto;
     padding: 0 0 0 2px;
     background-image: none;

@@ -35,62 +35,6 @@ if (accordion) {
   });
 }
 
-const modal = document.querySelector('.modal');
-const modalOpen = document.querySelector('.header-top__button');
-
-const modalForm = modal.querySelector('form');
-const modalClose = modal.querySelector('.modal__close');
-const modalName = modal.querySelector('input[type="text"]');
-const modalPhone = modal.querySelector('input[type="tel"]');
-const modalQuestion = modal.querySelector('textarea');
-
-const overlay = document.createElement('div');
-overlay.classList.add('overlay');
-
-const openModal = () => {
-  modal.classList.add('modal--show');
-  document.body.appendChild(overlay);
-
-  if (!modalName.value) {
-    modalName.focus();
-  } else if (!modalPhone.value) {
-    modalPhone.focus();
-  } else {
-    modalQuestion.focus();
-  }
-};
-
-const closeModal = () => {
-  modal.classList.remove('modal--show');
-  document.body.removeChild(overlay);
-};
-
-modalOpen.addEventListener('click', () => openModal());
-
-modalClose.addEventListener('click', () => closeModal());
-
-overlay.addEventListener('click', () => closeModal());
-
-window.addEventListener('keydown', (evt) => {
-  if (evt.key === ('Escape' || 'Esc')) {
-    if (modal.classList.contains('modal--show')) {
-      evt.preventDefault();
-      closeModal(modal);
-    }
-  }
-});
-
-modalForm.addEventListener('submit', (evt) => {
-  evt.preventDefault();
-
-  if (modalPhone.value.length === 14) {
-    closeModal();
-  }
-});
-
-
-// Local Storage
-
 const forms = document.querySelectorAll('form');
 const inputsName = document.querySelectorAll('input[type="text"]');
 const inputsPhone = document.querySelectorAll('input[type="tel"]');
@@ -114,8 +58,6 @@ if (storageUserName || storageUserPhone || storageUserQuestion) {
   inputsPhone.forEach((phone) => phone.value = storageUserPhone);
   textareasQuestion.forEach((text) => text.value = storageUserQuestion);
 }
-
-// Phone Mask
 
 const getInputNumbersValue = (input) => input.value.replace(/\D/g, '');
 
@@ -188,19 +130,10 @@ const onPhoneKeyDown = function (evt) {
   if (evt.key === 'Backspace' && input.value.length < 3) {
     evt.preventDefault();
   }
-  if (evt.key === 'Backspace' && input.selectionStart < 3) {
+  if (evt.key !== 'Backspace' && input.selectionStart < 3) {
     input.selectionStart = input.value.length;
   }
 };
-
-// const onPhoneChange = function (evt) {
-//   const input = evt.target;
-//   if (input.value === '+7(' || input.value.length !== 14) {
-//     input.setCustomValidity('Необходимо ввести 10 цифр номера');
-//   } else {
-//     input.setCustomValidity('');
-//   }
-// };
 
 for (const input of inputsPhone) {
   input.addEventListener('keydown', onPhoneKeyDown);
@@ -209,15 +142,6 @@ for (const input of inputsPhone) {
   input.addEventListener('focus', onPhoneFocus);
   input.addEventListener('blur', onPhoneBlur);
   input.addEventListener('click', onPhoneClick);
-  // input.addEventListener('change', onPhoneChange);
-}
-
-// forms submit
-
-if (isStorageSupport) {
-  inputsName.forEach((name) => localStorage.setItem('user-name', name.value));
-  inputsPhone.forEach((phone) => localStorage.setItem('user-phone', phone.value));
-  textareasQuestion.forEach((question) => localStorage.setItem('user-question', question.value));
 }
 
 forms.forEach((form, i) => {
@@ -232,7 +156,63 @@ forms.forEach((form, i) => {
         localStorage.setItem('user-phone', inputsPhone[i].value);
         localStorage.setItem('user-question', textareasQuestion[i].value);
       }
-      console.log('ok');
     }
   });
 });
+
+const modal = document.querySelector('.modal');
+const modalOpen = document.querySelector('.header-top__button');
+
+if (modal) {
+  const modalForm = modal.querySelector('form');
+  const modalClose = modal.querySelector('.modal__close');
+  const modalName = modal.querySelector('input[type="text"]');
+  const modalPhone = modal.querySelector('input[type="tel"]');
+  const modalQuestion = modal.querySelector('textarea');
+
+  const overlay = document.createElement('div');
+  overlay.classList.add('overlay');
+
+  const openModal = () => {
+    modal.classList.add('modal--show');
+    document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+
+    if (!modalName.value) {
+      modalName.focus();
+    } else if (!modalPhone.value) {
+      modalPhone.focus();
+    } else {
+      modalQuestion.focus();
+    }
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('modal--show');
+    document.body.removeChild(overlay);
+    document.body.style.overflow = 'auto';
+  };
+
+  modalOpen.addEventListener('click', () => openModal());
+
+  modalClose.addEventListener('click', () => closeModal());
+
+  overlay.addEventListener('click', () => closeModal());
+
+  window.addEventListener('keydown', (evt) => {
+    if (evt.key === ('Escape' || 'Esc')) {
+      if (modal.classList.contains('modal--show')) {
+        evt.preventDefault();
+        closeModal(modal);
+      }
+    }
+  });
+
+  modalForm.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+
+    if (modalPhone.value.length === 14) {
+      closeModal();
+    }
+  });
+}

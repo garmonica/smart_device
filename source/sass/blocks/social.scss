@@ -2,10 +2,11 @@
   @include reset-list;
   display: flex;
   flex-wrap: wrap;
+  max-width: 215px;
 
   @media (max-width: $tablet-width) {
     justify-content: flex-end;
-    max-width: 150px;
+    max-width: 205px;
   }
 
   @media (max-width: $mobile-width) {

@@ -24,6 +24,13 @@
   input::placeholder,
   textarea::placeholder {
     color: $basic-white;
+    opacity: 1;
+  }
+
+  input:hover,
+  textarea:hover {
+    outline: 1px solid rgba($basic-white, 0.5);
+    background: $accent;
   }
 
   input:focus,

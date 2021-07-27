@@ -19,7 +19,6 @@
   z-index: $zindex-main-screen;
 
   @media (max-width: $mobile-width) {
-    // max-width: 450px;
     margin: 0 auto;
   }
 }
@@ -96,7 +95,7 @@
   border: none;
   font-size: 16px;
   line-height: 19px;
-  // transition: 0.4s;
+  transition: 0.4s;
 
   &:hover,
   &:focus {

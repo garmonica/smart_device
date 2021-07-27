@@ -72,14 +72,13 @@
   }
 
   @media (max-width: $mobile-width) {
-    // max-width: 450px;
     width: 100%;
     margin: 0 auto 21px;
     padding: 24px 13px 26px 24px;
 
     &:first-child,
     &:last-child {
-      padding-right: 14px;
+      padding-right: 15px;
     }
 
     svg {
