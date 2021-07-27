@@ -181,7 +181,7 @@
           <form action="https://echo.htmlacademy.ru" method="POST">
             <div class="feedback__input-wrapper">
               <label class="visually-hidden" for="user-name">Имя</label>
-              <input id="user-name" type="text" name="user-name" placeholder="Имя" required="">
+              <input id="user-name" type="text" name="user-name" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё\s]{1,50}" required="">
               <label class="visually-hidden" for="user-phone">Телефон</label>
               <input id="user-phone" type="tel" name="user-phone" placeholder="Телефон" minlength="14" maxlength="14" required="">
             </div>
@@ -293,7 +293,7 @@
     <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
     <form action="https://echo.htmlacademy.ru" method="POST">
       <label class="visually-hidden" for="name">Имя</label>
-      <input id="name" type="text" placeholder="Имя" required="">
+      <input id="name" type="text" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё\s]{1,50}" required="">
       <label class="visually-hidden" for="phone">Телефон</label>
       <input id="phone" type="tel" placeholder="Телефон" minlength="14" maxlength="14" required="">
       <label class="visually-hidden" for="question">Ваш вопрос</label>
