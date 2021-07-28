@@ -169,22 +169,21 @@
   a {
     display: block;
     color: inherit;
-    margin-right: 30px;
-
-    @media (max-width: $mobile-width) {
-      margin: 0 0 21px;
-    }
-  }
-
-  p {
-    @include offset;
-  }
-
-  a,
-  p {
     font-size: 13px;
     line-height: 24px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+
+    @media (max-width: $mobile-width) {
+      margin: 0 0 21px;
+    }
+
+    &:last-child {
+      margin-left: 30px;
+
+      @media (max-width: $mobile-width) {
+        margin-left: 0;
+      }
+    }
   }
 }

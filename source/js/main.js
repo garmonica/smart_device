@@ -19,12 +19,12 @@ const accordion = document.querySelector('.footer-menu');
 
 if (accordion) {
   const accordionBlocks = accordion.querySelectorAll('.footer-menu__block');
-  const accordionHeadings = accordion.querySelectorAll('.footer-menu__heading');
+  const accordionButtons = accordion.querySelectorAll('.footer-menu__button');
 
   accordion.classList.remove('footer-menu--nojs');
 
-  accordionHeadings.forEach((heading, i) => {
-    heading.addEventListener('click', () => {
+  accordionButtons.forEach((button, i) => {
+    button.addEventListener('click', () => {
       if (accordionBlocks[i].classList.contains('footer-menu__block--opened')) {
         accordionBlocks[i].classList.remove('footer-menu__block--opened');
       } else {
