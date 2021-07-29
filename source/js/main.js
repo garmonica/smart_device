@@ -1,3 +1,5 @@
+const MOBILE_WIDTH = 767;
+
 const mainScreen = document.querySelector('.main-screen');
 
 if (mainScreen) {
@@ -22,8 +24,12 @@ if (accordion) {
   const accordionButtons = accordion.querySelectorAll('.footer-menu__button');
 
   accordion.classList.remove('footer-menu--nojs');
-
   accordionButtons.forEach((button, i) => {
+
+    if (document.body.clientWidth <= MOBILE_WIDTH) {
+      button.disabled = false;
+    }
+
     button.addEventListener('click', () => {
       if (accordionBlocks[i].classList.contains('footer-menu__block--opened')) {
         accordionBlocks[i].classList.remove('footer-menu__block--opened');
@@ -157,6 +163,7 @@ forms.forEach((form, i) => {
         localStorage.setItem('user-question', textareasQuestion[i].value);
       }
     }
+    forms[0].reset();
   });
 });
 

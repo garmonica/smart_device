@@ -526,7 +526,8 @@ a {
   color: #ffffff;
   border: none;
   background: rgba(255, 255, 255, 0.1);
-  outline: none; }
+  outline: none;
+  border-radius: 0; }
 
 .form input::-webkit-input-placeholder,
 .form textarea::-webkit-input-placeholder {
@@ -632,6 +633,14 @@ input:checked + .form__checkbox-label::after {
 input:focus + .feedback__checkbox-label span {
   opacity: 1; }
 
+input:hover + .feedback__checkbox-label::before,
+input:focus + .feedback__checkbox-label::before {
+  background: #ffffff; }
+
+input:hover + .feedback__checkbox-label::after,
+input:focus + .feedback__checkbox-label::after {
+  border-color: #00b2ff; }
+
 .form__checkbox-label:active {
   opacity: 0.5; }
 
@@ -704,6 +713,23 @@ input:focus + .feedback__checkbox-label span {
     .header-top__logo img {
       width: 38px;
       height: auto; } }
+
+.header-top__contacts-wrapper {
+  max-width: 770px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  @media (max-width: 1023px) {
+    .header-top__contacts-wrapper {
+      max-width: 500px; } }
+  @media (max-width: 767px) {
+    .header-top__contacts-wrapper {
+      max-width: 200px; } }
 
 .header-top__contact {
   display: block;
@@ -969,7 +995,6 @@ input:focus + .feedback__checkbox-label span {
   background-color: #ffffff;
   border: 1px solid #ebebeb;
   border-left: 3px solid #00b2ff;
-  cursor: pointer;
   position: relative; }
   .benefits__item svg {
     position: absolute;
@@ -1799,8 +1824,8 @@ input:focus + .feedback__checkbox-label span {
 
 .modal {
   max-width: 490px;
-  min-height: 605px;
-  padding: 30px 40px;
+  max-height: 100vh;
+  padding: 30px 40px 36px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -1809,7 +1834,8 @@ input:focus + .feedback__checkbox-label span {
   background: #00b2ff;
   z-index: 100;
   overflow: hidden;
-  display: none; }
+  display: none;
+  overflow-y: auto; }
   .modal h2 {
     margin-bottom: 13px;
     font-size: 28px;

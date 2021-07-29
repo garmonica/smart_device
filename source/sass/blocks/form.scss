@@ -19,6 +19,7 @@
     border: none;
     background: rgba($basic-white, 0.1);
     outline: none;
+    border-radius: 0;
   }
 
   input::placeholder,
@@ -121,6 +122,16 @@ input:checked + .form__checkbox-label::after {
 .form__checkbox-label:hover span,
 input:focus + .feedback__checkbox-label span {
   opacity: 1;
+}
+
+input:hover + .feedback__checkbox-label::before,
+input:focus + .feedback__checkbox-label::before {
+  background: $basic-white;
+}
+
+input:hover + .feedback__checkbox-label::after,
+input:focus + .feedback__checkbox-label::after {
+  border-color: $accent;
 }
 
 .form__checkbox-label:active {

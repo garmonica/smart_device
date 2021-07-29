@@ -31,6 +31,21 @@
   }
 }
 
+.header-top__contacts-wrapper {
+  max-width: 770px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @media (max-width: $tablet-width) {
+    max-width: 500px;
+  }
+
+  @media (max-width: $mobile-width) {
+    max-width: 200px;
+  }
+}
+
 .header-top__contact {
   display: block;
   margin-left: 81px;
