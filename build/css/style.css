@@ -682,7 +682,7 @@ input:focus + .feedback__checkbox-label::after {
       background-image: url("../img/main-bg-mobile@2x.jpg"); } }
 
 .header-top {
-  margin-bottom: 68px;
+  margin-bottom: 65px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -691,9 +691,9 @@ input:focus + .feedback__checkbox-label::after {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
   @media (max-width: 1023px) {
     .header-top {
       margin-bottom: 0; } }
@@ -705,6 +705,7 @@ input:focus + .feedback__checkbox-label::after {
   margin-right: auto; }
   @media (max-width: 767px) {
     .header-top__logo {
+      margin-top: 7px;
       margin-left: 2px; } }
 
 .header-top__logo img {
@@ -715,7 +716,7 @@ input:focus + .feedback__checkbox-label::after {
       height: auto; } }
 
 .header-top__contacts-wrapper {
-  max-width: 770px;
+  max-width: 535px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -734,7 +735,7 @@ input:focus + .feedback__checkbox-label::after {
 .header-top__contact {
   display: block;
   margin-left: 81px;
-  padding: 15px 0 15px 40px;
+  padding: 17px 0 17px 40px;
   font-size: 16px;
   line-height: 18px;
   color: #ffffff;
@@ -778,8 +779,7 @@ input:focus + .feedback__checkbox-label::after {
     height: 24px; } }
 
 .header-top__button {
-  margin-right: 4px;
-  margin-left: 50px; }
+  margin: 4px 3px 10px 50px; }
   .header-top__button:hover, .header-top__button:focus {
     color: #00b2ff;
     border-color: #00b2ff; }
@@ -791,7 +791,7 @@ input:focus + .feedback__checkbox-label::after {
 
 .main-screen {
   max-width: 785px;
-  padding: 105px 55px 275px 0;
+  padding: 100px 55px 275px 0;
   position: relative; }
   @media (max-width: 1023px) {
     .main-screen {
